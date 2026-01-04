@@ -33,7 +33,7 @@ mvnw.cmd
 *.local
 .env
 .env.*
-! .env.example
+!.env.example
 application-dev.yml
 application-dev.properties
 
