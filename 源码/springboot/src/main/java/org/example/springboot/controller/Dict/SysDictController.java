@@ -24,7 +24,7 @@ public class SysDictController {
     private DictTypeMapper sysDictMapper;
 
     /**
-     * 新增/修改字典类型
+     * 鏂板/淇敼瀛楀吀绫诲瀷
      * @param sysDict
      * @return
      */
@@ -34,36 +34,36 @@ public class SysDictController {
         queryWrapper.eq("dict_type_code",sysDict.getDictTypeCode());
         List<Object> exitDictType = sysDictMapper.selectObjs(queryWrapper);
         if(exitDictType!=null){
-            return error("-1","该类型已存在");
+            return error("-1","璇ョ被鍨嬪凡瀛樺湪");
         }
         int result = sysDictMapper.insert(sysDict);
-        return result>0 ? success() : error("-1", "保存失败");
+        return result>0 ? success() : error("-1", "淇濆瓨澶辫触");
     }
 
     /**
-     * 根据ID删除字典类型
+     * 鏍规嵁ID鍒犻櫎瀛楀吀绫诲瀷
      * @param id
      * @return
      */
     @DeleteMapping("/deleteById/{id}")
     public Result<?> deleteById(@PathVariable Integer id) {
         boolean result = sysDictMapper.deleteById(id) > 0;
-        return result ? success() : error("-1", "删除失败");
+        return result ? success() : error("-1", "鍒犻櫎澶辫触");
     }
 
     /**
-     * 批量删除字典类型
+     * 鎵归噺鍒犻櫎瀛楀吀绫诲瀷
      * @param idList
      * @return
      */
     @PostMapping("/deleteBatch")
     public Result<?> deleteBatch(@RequestBody List<Integer> idList) {
         boolean result = sysDictMapper.deleteBatchIds(idList) > 0;
-        return result ? success() : error("-1", "删除失败");
+        return result ? success() : error("-1", "鍒犻櫎澶辫触");
     }
 
     /**
-     * 查询�?有字典类�?
+     * 鏌ヨ鎵?鏈夊瓧鍏哥被鍨?
      * @return
      */
     @GetMapping("/findAll")
@@ -74,7 +74,7 @@ public class SysDictController {
     }
 
     /**
-     * 分页查询字典类型
+     * 鍒嗛〉鏌ヨ瀛楀吀绫诲瀷
      * @param pageNum
      * @param pageSize
      * @param dictTypeName

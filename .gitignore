@@ -3,6 +3,11 @@
 .vscode/
 *.iml
 *.log
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # OS
 .DS_Store
@@ -13,6 +18,7 @@ node_modules/
 dist/
 npm-debug.log
 yarn-error.log
+package-lock.json
 
 # Java/Maven
 target/
@@ -23,5 +29,15 @@ target/
 mvnw
 mvnw.cmd
 
-# Local config
+# Local config & Secrets
 *.local
+.env
+.env.*
+! .env.example
+application-dev.yml
+application-dev.properties
+
+# Runtime files
+files/
+logs/
+temp/
