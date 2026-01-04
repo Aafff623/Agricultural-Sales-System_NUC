@@ -1,0 +1,27 @@
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
+# Java/Maven
+target/
+*.class
+*.jar
+*.war
+.mvn/
+mvnw
+mvnw.cmd
+
+# Local config
+*.local
